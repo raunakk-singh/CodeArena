@@ -27,7 +27,7 @@ def submission(submission:SubmissionCreate,db:Session=Depends(get_db)):
 def get_submissions(db: Session = Depends(get_db)):
     submissions = db.query(models.Submission).all()
     return submissions
-@router.get("//{id}", response_model=SubmissionOut)
+@router.get("/{id}", response_model=SubmissionOut)
 def get_submission(id: int, db: Session = Depends(get_db)):
     submission = db.query(models.Submission).filter(
         models.Submission.id == id

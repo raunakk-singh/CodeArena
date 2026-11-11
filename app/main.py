@@ -3,7 +3,7 @@ from app import models
 from app.database import engine
 
 
-from app.routers import problems, submissions, test_case, users
+from app.routers import auth, problems, submissions, test_case, users
 
 app = FastAPI(title="CodeArena API")
 
@@ -20,3 +20,4 @@ app.include_router(problems.router)
 app.include_router(submissions.router)
 app.include_router(test_case.router)
 app.include_router(users.router)
+app.include_router(auth.router)

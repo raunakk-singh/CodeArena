@@ -1,5 +1,6 @@
 from .database import Base
 from sqlalchemy import Column,Integer,String,Text,DateTime,Boolean
+from sqlalchemy.sql.sqltypes import TIMESTAMP
 from sqlalchemy.sql import func
 
 
@@ -21,6 +22,7 @@ class Users(Base):
   second_name=Column(String,nullable=False)
   email=Column(String,nullable=False,unique=True)
   password=Column(String,nullable=False)
+  created_at = Column(TIMESTAMP(timezone=True),nullable=False,server_default=func.now())
   
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Text, Float
 from sqlalchemy.sql import func
@@ -52,11 +54,10 @@ class Submission(Base):
     # Timestamp
     created_at = Column(DateTime(timezone=True), server_default=func.now())
   
-class test_cases(Base):
+class TestCases(Base):
   __tablename__="test_cases"
   id=Column(Integer,primary_key=True,nullable=False)
   problem_id=Column(Integer,ForeignKey("problems.id"), nullable=False)
   input_data=Column(Text,nullable=False)
   expected_out=Column(Text,nullable=False)
   is_hidden = Column(Boolean, default=False, nullable=False)
-
