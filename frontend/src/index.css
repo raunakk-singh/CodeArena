@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  color: #fff;
+  background: #08090D;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  color: #fff;
+  background: rgba(196, 165, 245, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+[data-dashboard-theme='light'] {
+  color-scheme: light;
+  background-color: #f4f4f5;
+  color: #18181b;
+}
+
+[data-dashboard-theme='light'] [class*='bg-[#050507]'],
+[data-dashboard-theme='light'] [class*='bg-zinc-950'] {
+  background-color: #fff !important;
+}
+
+[data-dashboard-theme='light'] [class*='bg-zinc-900'] {
+  background-color: #f4f4f5 !important;
+}
+
+[data-dashboard-theme='light'] [class*='text-zinc-50'],
+[data-dashboard-theme='light'] [class*='text-zinc-100'],
+[data-dashboard-theme='light'] [class*='text-zinc-200'] {
+  color: #18181b !important;
+}
+
+[data-dashboard-theme='light'] [class*='text-zinc-300'],
+[data-dashboard-theme='light'] [class*='text-zinc-400'] {
+  color: #52525b !important;
+}
+
+[data-dashboard-theme='light'] [class*='text-zinc-500'],
+[data-dashboard-theme='light'] [class*='text-zinc-600'] {
+  color: #71717a !important;
+}
+
+[data-dashboard-theme='light'] [class*='border-zinc-'] {
+  border-color: #d4d4d8 !important;
+}
